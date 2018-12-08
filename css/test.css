@@ -1,0 +1,43 @@
+a {
+    background:purple
+}
+a:link{
+    color:white;
+}
+/* a:visited{
+  background: lightblue; 
+} */
+
+a:active{
+    border: 1px solid black;
+}
+
+a:hover{
+    background:none
+}
+a:focus, input:focus{
+    outline: 1px solid black;
+}
+
+div {
+    background: #e74c3c;
+    height:100px;
+    width:150px; 
+}
+
+span, a{
+    height:200px;
+    width:150px;
+    background: #3498db;
+
+}
+
+.newp1, newp2{
+    background: lightblue;
+    padding: 20px;
+    margin: 0px;
+}
+
+.link1{
+    background: #e74c3c;
+}
