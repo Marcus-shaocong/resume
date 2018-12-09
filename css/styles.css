@@ -108,6 +108,77 @@ usually all the width and height are contributed to horizontally and vertically.
 
 box-sizing property 
 box model fix pushing padding, margin, border inward.
+
+position element:
+position: absolute, relative, fixed.
+top: 10px; left: 40px; right: 40px; 
+need to set parent to relative, if the child want to relative to parent.
+
+
+guideline for float, dispaly, Position?
+float: flexible content,like a image surrounded by text; sidebar in the main content area;
+
+display: aligning page components(make sure to account for the extra space), aligning elements that need to be center aligned.
+
+Position: relative to another element, parent have to be relative, child is absolute.
+if using position, then float is ignored.
+if using float, then display is ignored.
+
+
+> The Stacking Context
+z-index only works on element which has position property in it.
+
+the background{
+    background-color:black;
+    background-repeat:no-repeat;
+    background-image: url(https://xxx.img);
+    background-position: 20px; 
+}
+
+rgb and appha transparency
+rgba(199,21,133,0.5) get a transparent background;
+https://unsplash.com/ get free bg img.
+https://www.designrush.com/resources/publicdomainarchive/
+
+rgb.to //convert hex value to rgb value
+
+>
+responsive design:
+https:www.liquidapsive.com
+1024*768
+1280*1024
+Grace degradation and mobile
+progressive enhancement and mobile
+
+Fluid vs responsive 
+
+Media query.
+Media type: print, speech, screen, all
+<link media="screen and (max-width: 400px)" rel="stylesheet" href="mobile.css">
+@media (max-width: 400px){
+    .selector{
+
+    }
+}
+
+@media all (max-width: 400px){}
+@media (max-width: 400px){}
+
+
+@media (max-width: 768px){
+    .selector{
+
+    }
+}
+@media (min-width: 769px){
+    .selector{
+
+    }
+}
+
+> add mobile view port
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 */
 /* 
 Color Palette
@@ -124,19 +195,6 @@ html{
     box-sizing: inherit
 }
 
-.col-narrow{
-    width:30%;
-    float: left;
-    /* border: 1px solid black; */
-}
-
-.col-wide{
-    width:70%;
-    float:left;
-    padding-left:20px;
-    /* border: 1px solid black; */
-}
-
 @font-face {
     font-family: 'Open Sans';
     src: url('../fonts/Open_Sans/OpenSans-Regular.ttf');
@@ -145,6 +203,14 @@ html{
 @font-face {
     font-family: 'Caveat';
     src: url('../fonts/Caveat/Caveat-Regular.ttf');
+}
+
+
+
+.clearfix:after{
+    content:"";
+    display: table;
+    clear: both;
 }
 
 .profile-img{
@@ -161,6 +227,7 @@ body{
 
 h1, h2{
     font-family: 'Caveat', cursive;
+    font-weight: 400;
 }
 
 a{
@@ -175,23 +242,38 @@ h1{
     font-size: 80px
 }
 
+h2{
+    font-size: 40px;
+    margin-top:0;
+}
 .work{
     background:#EDF2F4 ; 
+    /* background: linear-gradient(rgba(173,95,84,0.8), rgba(173,95,84,0.5)), url('../images/bg4.jpg') no-repeat;
+    background-size: cover; */
 }
 .education{
-    background:#8D99AE;
+    /* background:#8D99AE; */
+    background: linear-gradient(rgba(141,153,174,0.8), rgba(141,153,174,0.5)), url('../images/bg.jpg') no-repeat;
+    background-size: cover;
 }
 .container-wrap{
     max-width:950px;
-    margin:0 auto;
-    padding-top: 30px;
+    margin: auto;
+    padding-top: 80px;
     margin-top:0;
     padding-bottom: 30px;
-    overflow: auto; 
+    overflow: hidden; 
 }
 
+/* .headerwrap{
+    padding-bottom: 50px;
+    overflow: auto; 
+    position: relative;
+} */
 header{
     text-align: center;
+    padding-top:50px;
+    position: relative;
 }
 
 header h1, header h2{
@@ -209,7 +291,9 @@ text-align: left;
 
 .side-project{
     /* color: #003049; */
-    color:#5A352A;
+    /* color:#5A352A; */
+    background: linear-gradient(rgba(141,153,174,0.8), rgba(141,153,174,0.5)), url('../images/bg3.jpg') no-repeat;
+    background-size: cover;
 }
 
 header, footer{
@@ -219,4 +303,75 @@ header, footer{
 
 footer{
 margin-top: 0;
+}
+
+/* navigation */
+nav {
+    text-align: center;
+    background: white;
+    position: fixed;
+    top:0;
+    left: 0;
+    right:0;
+    /* width:100%; */
+}
+nav a {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 700;
+    margin:20px 50px 20px 50px;
+    min-width: 100px;
+    display: inline-block;
+}
+
+
+.btn{
+    position: absolute;
+    text-decoration: none;
+    right:0;
+    bottom:0;
+    background: #EF233C;
+    color: white;
+    padding: 10px;
+    display: inline-block;
+    /* overflow: auto; */
+}
+
+/* Media Queries */
+@media (min-width:950px){
+
+    .col-narrow{
+        width:30%;
+        float: left;
+        /* border: 1px solid black; */
+    }
+    
+    .col-wide{
+        width:70%;
+        float:left;
+        padding-left:20px;
+        /* border: 1px solid black; */
+    }
+
+}
+
+
+@media (max-width:899px){
+
+header{
+    text-align: center;
+}
+
+.profile-img{
+    width:200px;
+}
+
+
+.col-narrow{
+    min-width: 100px;
+}
+
+.col-wide{
+    min-width: 100px;
+}
 }

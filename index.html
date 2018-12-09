@@ -12,7 +12,14 @@
 <body>
     <!-- // Intro -->
     <header>
-        <div class="container-wrap">
+        <nav>
+            <a href="#about">About</a>
+            <a href="#work">Work Experience</a>
+            <a href="#sideprj">Side Projects</a>
+            <a href="#education">Education</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="container-wrap" id="about">
             <img class="profile-img col-narrow" src="images/cong.png" alt="Shaocong Liang">
             <div class="col-wide">
                 <h1>Marcus Liang</h1>
@@ -24,13 +31,14 @@
                 <p>Very strong communication ability within an international working environment.</p>
                 <p>Learn new technologies and improve every day. Able to work independently and cherish the team work spirit.</p>
             </div>
-
         </div>
-    </header>
-
+        <div class="clearfix">
+                <a href="resume.pdf" class="btn download">Download PDF</a>
+        </div>
+        </header>
     <main>
         <!-- // Work Experience -->
-        <section class="work">
+        <section class="work" id="work">
             <div class="container-wrap">
                 <h2>Work Experience</h2>
 
@@ -82,7 +90,7 @@
                 </div>
 
                 <div class="col-wide">
-                <p>Lead the front-end development for in-house safety inspection software.</p>
+                <p>Deliver the file system recovery feature for EMC VNXe kittyhawk release.</p>
                 <p>Key contributions:</p>
                 <ul>
                     <li>Implemented the UFS recovery feature based on the Maped LUN driver(MLU) framework. MLU is a component which connect the
@@ -111,7 +119,7 @@
             </div>
         </section>
 
-        <section class="side-project">
+        <section class="side-project" id="sideprj">
                 <div class="container-wrap">
                     <h2>Side Projects & Voluteer Experiences</h2>
     
@@ -139,7 +147,7 @@
                 </div>
             </section>
         <!-- // Education -->
-        <section class="education">
+        <section class="education" id="education">
             <div class="container-wrap">
                 <h2>Education</h2>
 
@@ -158,7 +166,7 @@
 
     <!-- // Footer & contact info -->
     <footer>
-        <div class="container-wrap">
+        <div class="container-wrap" id="contact">
             <h2>Let's Keep in Touch!</h2>
 
             <!-- Social media links. Add or remove any networks. -->

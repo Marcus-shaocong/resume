@@ -1,3 +1,90 @@
+/*
+attributes selector
+[attr]
+[attr=val]
+E.g.,
+<input type="search">
+
+[type="search"]{
+border: 1px solid blue;
+}
+
+child combinators: select only the child element
+E.g.,
+<section>
+<a herf="#"> child </a>
+<div>
+<a href="#"> descendant </a>
+</div>
+</section>
+
+section  a {
+    child & descendant links
+}
+
+section > a {
+    only child links 
+}
+
+sibling combinators
+Adjacent(+)
+General(~)
+
+E.g.,
+<p> Paragraph 1. </p>
+<h2> Heading </h2>
+<h1> heading 1</h1>
+<p> Paragraph 2. </p>
+<p> Paragraph 3. </p>
+<p> Paragraph 4. </p>
+
+h2 + p{
+    select paragraph 2
+}
+
+h2 ~ p {
+    selects paragraphs 2-4
+}
+
+:first-child selects the first child element of its type.
+:last-child selects the last child element of its type.
+
+p:first-of-type{
+    color: red;
+}
+p: last-of-type{
+    color:blue;
+}
+<section>
+<h1> heading </h1>
+<p> paragraph <p> <!-- this is red-->
+<p> paragraph. </p>
+<p> paragraph. </p> <!-- this is blue-->
+<span> span element. </span>
+</section>
+
+
+:nth-child() is used to select one or more child elements based on the order within the parent container.
+
+can pass: keyword, number, or algebraic expresion.
+:nth-child(odd)
+:nth-child(3)
+:nth-child(2n+1)
+
+element:nth-child(odd) { select the 1st, 3rd, 5th, ect*}
+element:nth-child(even) { select 2nd, 4th, 6th, etc }
+
+pseudo-element 
+:before, :after // must always be used with the content property to generate the content to be inserted
+
+content: "/2764" unicode string need to add / in begin
+*/
+
+
+[type="search"] {
+    border: 1px solid blue;
+}
+    
 a {
     background:purple
 }
@@ -40,4 +127,24 @@ span, a{
 
 .link1{
     background: #e74c3c;
+}
+
+.one.two{
+    color: green;
+}
+
+p.one{
+    color: red;
+}
+
+/* p#three{
+    color: yellow
+} */
+
+
+.quote:before{
+    content: '"';
+}
+.quote:after{
+    content:"\"";
 }
