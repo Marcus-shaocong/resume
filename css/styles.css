@@ -103,6 +103,11 @@ inline element only push element horizontally, not vertically. unless change the
     <p> floated element </p>
 </div>
 
+box model in css originally:
+usually all the width and height are contributed to horizontally and vertically.
+
+box-sizing property 
+box model fix pushing padding, margin, border inward.
 */
 /* 
 Color Palette
@@ -111,6 +116,26 @@ Color Palette
 #EDF2F4 - blue/white
 #EF233C - red  */
 
+html{
+    box-sizing: border-box;
+}
+
+*, *:before, *:after{
+    box-sizing: inherit
+}
+
+.col-narrow{
+    width:30%;
+    float: left;
+    /* border: 1px solid black; */
+}
+
+.col-wide{
+    width:70%;
+    float:left;
+    padding-left:20px;
+    /* border: 1px solid black; */
+}
 
 @font-face {
     font-family: 'Open Sans';
@@ -123,10 +148,10 @@ Color Palette
 }
 
 .profile-img{
-    height:300px;
+    /* height:300px; */
     border-radius: 50%;
-    float: left;
-    margin-right: 50px;
+    /* float: left;
+    margin-right: 50px; */
 }
 
 body{
